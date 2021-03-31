@@ -1,0 +1,79 @@
+@import "./variables.scss";
+
+.toolbar {
+    height: $toolbar-height;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 3px 6px #000000;
+    z-index: 3;
+
+    &__btn {
+        height: 25px;
+        width: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        // background-size: cover;
+        margin: 0 10px;
+    }
+
+    &__color{
+        height: 25px;
+        width: 25px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+
+    &__line {
+        margin: 0 auto;
+    }
+
+    .brush {
+        background: url("../assets/img/paintbrush.svg") no-repeat center center;
+    }
+
+    .rect {
+        background: url("../assets/img/rectangle.svg") no-repeat center center;
+    }
+
+    .circle {
+        background: url("../assets/img/dry-clean.svg") no-repeat center center;
+    }
+
+    .eraser {
+        background: url("../assets/img/eraser.svg") no-repeat center center;
+    }
+
+    .line {
+        background: url("../assets/img/diagonal-line.svg") no-repeat center center;
+    }
+
+    .undo {
+        margin-left: 20rem;
+        background: url("../assets/img/undo.svg") no-repeat center center;
+    }
+
+    .redo {
+        background: url("../assets/img/redo.svg") no-repeat center center;
+    }
+
+    .save {
+        background: url("../assets/img/save-file-option.svg") no-repeat center center;
+    }
+}
+
+.setting-bar {
+    height: $toolbar-height;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 4px 5px rgb(10, 239, 255);
+    top: $toolbar-height;
+}
