@@ -4,6 +4,7 @@ import {observer} from "mobx-react-lite";
 import CanvasState from '../store/canvasState';
 import Brush from '../tools/Brush';
 import toolState from '../store/toolState';
+import canvasState from '../store/canvasState';
 
 const Canvas = observer(() => {
     const canvasRef = useRef()
@@ -13,9 +14,13 @@ const Canvas = observer(() => {
         toolState.setTool(new Brush(canvasRef.current))
     }, [])
 
+    const mouseDownHandler = () => {
+        canvasState.pushToUndo(canvasRef.current.toDataURL())
+    }
+
     return (
         <div className="canvas">
-            <canvas ref={canvasRef} width={800} height={600}/>
+            <canvas onMouseDown={() => mouseDownHandler()} ref={canvasRef} width={800} height={600}/>
         </div>
     );
 });
